@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="enter username"
+            android:id="@+id/uname"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="enter password"
+            android:id="@+id/pwd"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login"
+            android:text="LOGIN"
+            android:onClick="verify"/>
+    </LinearLayout>
+
+
+package com.example.myapplication;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    EditText user,pass;
+    String u = "ilahia";
+    String p = "ilahia";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        user = (EditText) findViewById(R.id.uname);
+        pass = (EditText) findViewById(R.id.pwd);
+    }
+
+    public void verify(View v) {
+        if (v.getId() == R.id.login) {
+            String a = user.getText().toString();
+            String b = pass.getText().toString();
+            if (a.equals(u) && b.equals(p))
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
+        }
+    }
+}
+
+            android:hint="enter password"
+            android:id="@+id/pwd"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login"
+            android:text="LOGIN"
+            android:onClick="verify"/>
+    </LinearLayout>
+
+
